@@ -154,6 +154,7 @@
                 <section class="top-bar-section">
                     <ul class="right">
                         <li class="divider"></li>
+                        @Html.Partial("_LoginPartial")
                         <li class="has-dropdown not-click">
                             <a href="#"><i class="fa fa-graduation-cap"></i> Learn</a>
                             <ul class="dropdown">
@@ -243,7 +244,7 @@
 
                             
                             <li class="dropdown">
-                                @*<a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><span aria-hidden="true" class="fa fa-cogs"></span> Debug <span aria-hidden="true" class="caret"></span></a>*@
+                               <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><span aria-hidden="true" class="fa fa-cogs"></span> Debug <span aria-hidden="true" class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/@ConfigurationManager.AppSettings["elmah.mvc.route"]"><span aria-hidden="true" class="fa fa-life-ring"></span> Elmah</a></li>
                                     <li><a href="/glimpse.axd"><span aria-hidden="true" class="fa fa-line-chart"></span> Glimpse</a></li>

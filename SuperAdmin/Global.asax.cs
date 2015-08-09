@@ -1,13 +1,14 @@
-﻿namespace SuperAdmin
-{
+﻿    using System;
     using System.Web.Helpers;
     using System.Web.Mvc;
+    using System.Web.Http;
     using System.Web.Optimization;
     using System.Web.Routing;
     using Boilerplate.Web.Mvc;
     using SuperAdmin.Services;
     using NWebsec.Csp;
-
+namespace SuperAdmin
+{
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -16,6 +17,9 @@
             ConfigureAntiForgeryTokens();
 
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

@@ -1,8 +1,8 @@
-﻿namespace SuperAdmin
-{
+﻿
     using System.Web.Mvc;
     using System.Web.Routing;
-
+namespace SuperAdmin
+{
     public static class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
@@ -28,8 +28,6 @@
             // Ignore the humans.txt file.
             routes.IgnoreRoute("humans.txt");
 
-            // Enable attribute routing.
-            routes.MapMvcAttributeRoutes();
 
             // Normal routes are not required because we are using attribute routing. So we don't need this MapRoute 
             // statement. Unfortunately, Elmah.MVC has a bug in which some 404 and 500 errors are not logged without 
@@ -40,6 +38,13 @@
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
+                name: "debug",
+                 url: "elmah"
+                 );
+            // Enable attribute routing.
+            routes.MapMvcAttributeRoutes();
         }
     }
 }
